@@ -8,7 +8,7 @@ Este repositório contém os desafios solicitados pela [idwall](https://idwall.c
 
 [E-mail](mailto:felipgomesilva@gmail.com)
 
-[Twiiter](https://twitter.com/aka_cafu)
+[Twitter](https://twitter.com/aka_cafu)
 
 
 

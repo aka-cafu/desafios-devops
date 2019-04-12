@@ -2,31 +2,35 @@
 
 ## Motivação
 
-Kubernetes atualmente é a principal ferramenta de orquestração e _deployment_ de _containers_ utilizado no mundo, práticamente tornando-se um padrão para abstração de recursos de infraestrutura. 
-
-Na IDWall todos nossos serviços são containerizados e distribuídos em _clusters_ para cada ambiente, sendo assim é importante que as aplicações sejam adaptáveis para cada ambiente e haja controle via código dos recursos kubernetes através de seus manifestos. 
-
-## Objetivo
-Dentro deste repositório existe um subdiretório **app** e um **Dockerfile** que constrói essa imagem, seu objetivo é:
-
-- Construir a imagem docker da aplicação
-- Criar os manifestos de recursos kubernetes para rodar a aplicação (_deployments, services, ingresses, configmap_ e qualquer outro que você considere necessário)
-- Criar um _script_ para a execução do _deploy_ em uma única execução.
-- A aplicação deve ter seu _deploy_ realizado com uma única linha de comando em um cluster kubernetes **local**
-- Todos os _pods_ devem estar rodando
-- A aplicação deve responder à uma URL específica configurada no _ingress_
+Este exemplo foi criado utilizando o [minikube](https://kubernetes.io/docs/setup/minikube/), para que seja possível executa-lo em um cluster não gerenciado pelo minikube, é necessário alterar alguns passos no [script de inicialização]().
 
 
-## Extras 
-- Utilizar Helm [HELM](https://helm.sh)
-- Divisão de recursos por _namespaces_
-- Utilização de _health check_ na aplicação
-- Fazer com que a aplicação exiba seu nome ao invés de **"Olá, candidato!"**
+## Dependências
+Para que seja possível executar o projeto utilizando o minikube, é preciso baixá-lo, juntamente com o [kubectl]() e também é preciso ter um virtualizador ([Virtualbox](https://www.virtualbox.org/wiki/Downloads), [KVM](http://www.linux-kvm.org/), [VMware](https://www.vmware.com/products/fusion), etc) em sua instância/notebook.
 
-## Notas
+* Instalação do _kubectl_: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+* Instalação do Minikube: https://kubernetes.io/docs/tasks/tools/install-minikube/
 
-* Pode se utilizar o [Minikube](https://github.com/kubernetes/minikube) ou [Docker for Mac/Windows](https://docs.docker.com/docker-for-mac/) para execução do desafio e realização de testes.
 
-* A aplicação sobe por _default_ utilizando a porta **3000** e utiliza uma variável de ambiente **$NAME**
+**Obs:** Antes de iniciar o processo de deploy, através do script, execute o comando abaixo para capturar o endereço ip do seu cluster e inclua a seguinte entrada no seu arquivo **/etc/hosts/**
 
-* Não é necessário realizar o _upload_ da imagem Docker para um registro público, você pode construir a imagem localmente e utilizá-la diretamente.
+```bash
+minikube ip
+192.168.100.1
+```
+
+Entrada no **/etc/hosts**
+```bash
+192.168.100.1 hello-idwall.challenge
+```
+
+## Execução 
+
+Para realizar o deploy da aplicação, acesse o diretório: [manifests](https://github.com/aka-cafu/desafios-devops/tree/master/kubernetes/manifests) e execute o script [minikube-deploy.sh](https://github.com/idwall/desafios-devops/tree/master/kubernetes/minikube-deploy.sh)
+
+```bash
+./minikube-deploy.sh
+```
+
+## Demo
+![asciinema_record](http://i.imgur.com/7zOCsk9.gif)

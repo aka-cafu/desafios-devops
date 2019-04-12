@@ -26,7 +26,7 @@ Entrada no **/etc/hosts**
 
 ## Execução 
 
-Para realizar o deploy da aplicação, acesse o diretório: [manifests](https://github.com/aka-cafu/desafios-devops/tree/master/kubernetes/manifests) e execute o script [minikube-deploy.sh](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy.sh)
+Para realizar o deploy da aplicação, no diretório raiz execute o script [minikube-deploy.sh](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy.sh)
 
 ```bash
 ./minikube-deploy.sh

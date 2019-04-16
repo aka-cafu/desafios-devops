@@ -31,7 +31,7 @@ Entrada no **/etc/hosts**
 Para realizar o deploy da aplicação, no diretório raiz execute o script [minikube-deploy-with-helm.sh](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy-with-helm.sh)
 
 ```bash
-./minikube-deploy.sh
+./minikube-deploy-with-helm.sh
 ```
 
 ## Demo

@@ -2,7 +2,9 @@
 
 ## Motivação
 
-Este exemplo foi criado utilizando o [minikube](https://kubernetes.io/docs/setup/minikube/), para que seja possível executa-lo em um cluster não gerenciado pelo minikube, é necessário alterar alguns passos no [script de inicialização]().
+Este exemplo foi criado utilizando o [minikube](https://kubernetes.io/docs/setup/minikube/), para que seja possível executa-lo em um cluster não gerenciado pelo minikube, é necessário alterar alguns passos no [script de inicialização](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy-with-helm.sh).
+
+A inicialização da aplicação de se dá com as informações, que são preenchidas no arquivo [values.yaml](https://github.com/aka-cafu/desafios-devops/blob/0.2/kubernetes/idwall-app/values.yaml), como nome da aplicação, porta do container, nome da imagem, tag, etc.
 
 
 ## Dependências
@@ -26,11 +28,11 @@ Entrada no **/etc/hosts**
 
 ## Execução 
 
-Para realizar o deploy da aplicação, no diretório raiz execute o script [minikube-deploy.sh](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy.sh)
+Para realizar o deploy da aplicação, no diretório raiz execute o script [minikube-deploy-with-helm.sh](https://github.com/aka-cafu/desafios-devops/blob/master/kubernetes/minikube-deploy-with-helm.sh)
 
 ```bash
-./minikube-deploy.sh
+./minikube-deploy-with-helm.sh
 ```
 
 ## Demo
-![asciinema_record](http://i.imgur.com/7zOCsk9.gif)
+![asciinema_record](http://i.imgur.com/GzH6R4U.gif)
